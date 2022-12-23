@@ -1,0 +1,104 @@
+Object  file ramALL.o at $0000: Z80RMF12
+  Name: ramALL
+  Section CONTENDED: 1 bytes
+  Section bss_compiler: 111 bytes
+  Section IGNORE: 0 bytes
+  Section code_crt_init: 0 bytes
+  Section code_compiler: 3238 bytes
+  Section BANK_00: 249 bytes
+  Section rodata_compiler: 1111 bytes
+  Section data_compiler: 24 bytes
+  Section IM2_VECTOR_PLACEMENT: 325 bytes
+  Section code_user: 224 bytes
+  Section rodata_user: 1 bytes
+  Section smc_user: 0 bytes
+  Section data_user: 0 bytes
+  Section bss_user: 1 bytes
+  Symbols:
+    G A $0000 _Variable_in_contended (section CONTENDED) (file ramlow.asm:28)
+    G A $0399 _slopeCalculation (section code_compiler) (file ram0.c:1239)
+    G A $0371 _N_atan (section code_compiler) (file ram0.c:1214)
+    G A $0000 _N_atan2 (section code_compiler) (file ram0.c:789)
+    G A $0000 _normalize (section BANK_00) (file ram0.c:696)
+    G A $00C7 _Variable_in_RAM0 (section BANK_00) (file ram0Z.asm:29)
+    G A $00D0 _gfx_xy (section BANK_00) (file ram0Z.asm:36)
+    G A $00D2 _rtunes_pixel (section BANK_00) (file ram0Z.asm:40)
+    G A $0BDA _main (section code_compiler) (file uncontended.c:2178)
+    G A $0955 _wrapAroundPI2 (section code_compiler) (file uncontended.c:1720)
+    G A $089F _wrapAroundPI (section code_compiler) (file uncontended.c:1571)
+    G A $07CE _aroundCompass (section code_compiler) (file uncontended.c:1409)
+    G A $0731 _radians2Degrees (section code_compiler) (file uncontended.c:1276)
+    G A $06B0 _degrees2Radians (section code_compiler) (file uncontended.c:1164)
+    G A $0685 __mikeCOS (section code_compiler) (file uncontended.c:1138)
+    G A $054E __mikeSIN (section code_compiler) (file uncontended.c:982)
+    G A $052B _slomo (section code_compiler) (file uncontended.c:952)
+    G A $0016 _degrees (section data_compiler) (file uncontended.c:2358)
+    G A $0012 _radian2 (section data_compiler) (file uncontended.c:2356)
+    G A $000E _radians (section data_compiler) (file uncontended.c:2354)
+    G A $000C _answer (section data_compiler) (file uncontended.c:2352)
+    G A $000A _reflection (section data_compiler) (file uncontended.c:2350)
+    G A $0008 _surfaceAngle (section data_compiler) (file uncontended.c:2348)
+    G A $0006 _incomingRay (section data_compiler) (file uncontended.c:2346)
+    G A $0005 _f (section data_compiler) (file uncontended.c:2344)
+    G A $0004 _dy (section data_compiler) (file uncontended.c:2342)
+    G A $0003 _dx (section data_compiler) (file uncontended.c:2340)
+    G A $0002 _direction (section data_compiler) (file uncontended.c:2338)
+    G A $0000 _routineChoice (section data_compiler) (file uncontended.c:2336)
+    G A $006D _Y (section bss_compiler) (file uncontended.c:896)
+    G A $006B _X (section bss_compiler) (file uncontended.c:894)
+    G A $0067 _yy (section bss_compiler) (file uncontended.c:892)
+    G A $0063 _xx (section bss_compiler) (file uncontended.c:890)
+    G A $0061 _y (section bss_compiler) (file uncontended.c:888)
+    G A $005F _x (section bss_compiler) (file uncontended.c:886)
+    G A $005B _radian (section bss_compiler) (file uncontended.c:884)
+    G A $0059 _angle (section bss_compiler) (file uncontended.c:882)
+    G A $0055 _i (section bss_compiler) (file uncontended.c:880)
+    G A $0051 _floatInput (section bss_compiler) (file uncontended.c:878)
+    G A $0031 _input (section bss_compiler) (file uncontended.c:876)
+    G A $002F _y2 (section bss_compiler) (file uncontended.c:874)
+    G A $002D _x2 (section bss_compiler) (file uncontended.c:872)
+    G A $002B _y1 (section bss_compiler) (file uncontended.c:870)
+    G A $0029 _x1 (section bss_compiler) (file uncontended.c:868)
+    G A $0027 _temp5 (section bss_compiler) (file uncontended.c:866)
+    G A $0023 _bob (section bss_compiler) (file uncontended.c:864)
+    G A $0022 _temp (section bss_compiler) (file uncontended.c:862)
+    G A $0020 _temp1 (section bss_compiler) (file uncontended.c:860)
+    G A $0000 _string (section bss_compiler) (file uncontended.c:858)
+    G A $0A0B _reflection5 (section code_compiler) (file uncontended.c:1869)
+    G A $0000 _IM2_PUSH_POP (section IM2_VECTOR_PLACEMENT) (file im2.asm:29)
+    G A $0022 _SETUP_IM2 (section IM2_VECTOR_PLACEMENT) (file im2.asm:68)
+    G A $0043 _IM2_VECTOR (section IM2_VECTOR_PLACEMENT) (file im2.asm:110)
+    G A $0000 _keypress (section code_user) (file keyboard.asm:14)
+    G A $0002 _Read_Controls (section code_user) (file keyboard.asm:23)
+    G A $005A _random_number_16 (section code_user) (file random.asm:7)
+    G A $005C _xorshift_prng (section code_user) (file random.asm:12)
+    G A $007C _border_Change_IM2 (section code_user) (file uncontended.asm:21)
+    G A $0089 _border_Change_uncontended (section code_user) (file uncontended.asm:32)
+    G A $008D _character_address (section code_user) (file uncontended.asm:42)
+    G A $008F _attribute_color (section code_user) (file uncontended.asm:45)
+    G A $0090 _attribute_address (section code_user) (file uncontended.asm:55)
+    G A $0092 _attribute_width (section code_user) (file uncontended.asm:60)
+    G A $0093 _attribute_height (section code_user) (file uncontended.asm:62)
+    G A $0094 _pixel_address (section code_user) (file uncontended.asm:65)
+    G A $0096 _pixel_position (section code_user) (file uncontended.asm:67)
+    G A $0097 _character_X (section code_user) (file uncontended.asm:70)
+    G A $0098 _character_Y (section code_user) (file uncontended.asm:72)
+    G A $0099 _attribute_Box (section code_user) (file uncontended.asm:76)
+    G A $00C3 _Get_Attribute_Address (section code_user) (file uncontended.asm:134)
+    G A $0000 _xyzzy2 (section rodata_user) (file uncontended.asm:167)
+    G A $0000 _ada (section bss_user) (file uncontended.asm:184)
+  Externs:
+    U         ___fsadd
+    U         ___fsadd_callee
+    U         ___fsdiv_callee
+    U         ___fsgt_callee
+    U         ___fslt_callee
+    U         ___fsmul_callee
+    U         ___fssub_callee
+    U         ___sint2fs_callee
+    U         _floor_fastcall
+    U         _in_pause_fastcall
+    U         _scanf
+    U         _printf
+    U         _atof_fastcall
+    U         _zx_cls_fastcall
