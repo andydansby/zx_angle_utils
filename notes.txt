@@ -1,0 +1,418 @@
+
+/*
+                90
+             130   40
+            180       0
+             220   320
+                270
+
+                1.57
+            2.26     .698
+        3.14                0
+            3.839     5.585
+                4.712
+
+
+xx  = google    vs  Speccy
+0   = 0             0
+1   = 0.0174533     0.017450
+10  = 0.174533      0.174500
+40  = 0.698132      0.698000
+90  = 1.5708        1.570500
+130 = 2.26893       2.268500
+180 = 3.14159       3.141000
+220 = 3.83972       3.839000
+270 = 4.71239       4.711500
+320 = 5.58505       5.584000
+359 = 6.26573       6.264549
+360 = 6.28319       6.282000
+*/
+
+void reflection5 (void)
+{
+    int incomingRay = 0;
+    int surfaceAngle = 0;
+    int reflection1 = 0;
+    int reflection2 = 0;
+    int oppositeAngle = 0;
+    int difference = 0;
+
+    slomo();
+
+    printf("\x16\x01\x02");
+	printf ("Hello Reflection\n");
+	printf ("Enter Surface Angle ");
+    scanf("%d", &surfaceAngle);
+    printf ("\nSurface Angle = %d \n",surfaceAngle);
+
+    ////////////
+    //calculate opposite angle
+    if (surfaceAngle < 180)
+    {//if you use <= 180 opposite angle will be 360
+        oppositeAngle = surfaceAngle + 180;//good
+    }
+    if (surfaceAngle >= 180)
+    {///if you use >= 180 opposite angle will be 0
+        oppositeAngle = surfaceAngle - 180;//good
+    }
+    printf ("oppositeAngle = %d \n\n",oppositeAngle);
+    ////////////
+    // opposite angles seem good
+    ////////////
+
+    printf ("Enter Incoming Ray Angle ");
+    scanf("%d", &incomingRay);
+    printf ("\nIncoming Ray = %d \n",incomingRay);
+
+    ////////////
+    // Reflection calculation
+    ////////////
+    reflection1 = surfaceAngle * 2 - incomingRay;
+    if (reflection1 >= 360)
+    {
+        reflection2 = reflection1 - 360;
+    }
+    if (reflection1 < 0)
+    {
+        reflection2 = reflection1 + 360;
+    }
+    else
+    {
+        reflection2 = reflection1;
+    }
+
+    ////////////
+    // on larger angles, bring back into range
+    ////////////
+    if (reflection2 > 360)
+    {
+        reflection2 -= 360;
+    }
+
+
+
+
+    //special case coming at the edge
+    //leave for last check
+    if (incomingRay == surfaceAngle)
+    {
+        reflection2 = surfaceAngle;
+    }
+    if (incomingRay == oppositeAngle)
+    {
+        reflection2 = oppositeAngle;
+    }
+    //need to program edge cases as well
+    printf ("## reflection2 = %d \n\n",reflection2);
+
+
+
+    slomo();
+    printf ("Press a Key\n");
+    in_pause(0);
+
+
+
+    //function angleReflect(incidenceAngle, surfaceAngle){
+    //var a = surfaceAngle * 2 - incidenceAngle;
+    //return a >= 360 ? a - 360 : a < 0 ? a + 360 : a; }
+
+}
+
+
+
+void reflection3 (void)
+{
+    float f_reflection1 = 0;
+    float f_reflection2 = 0;
+    float f_ray = 0;
+    float f_surface = 0;
+    float f_reflection = 0;
+    int incomingRay = 0;
+    int surfaceAngle = 0;
+    int reflection = 0;
+
+    slomo();
+
+    printf("\x16\x01\x02");
+	printf ("Hello Reflection\n");
+
+    printf ("Enter Incoming Ray Angle ");
+    scanf("%d", &incomingRay);
+    printf ("\nIncoming Ray = %d \n",incomingRay);
+
+    //convert ray to radians
+    f_ray = (float) incomingRay;
+    //printf ("\nf_ray = %f \n",f_ray);
+    f_ray = degree2radian2 (f_ray); //OK
+    printf ("convert to RAD f_ray = %f \n\n",f_ray);
+    /////////////////////////////////////////////////////
+    printf ("Enter Surface Angle ");
+    scanf("%d", &surfaceAngle);
+    printf ("\nSurface Angle = %d \n",surfaceAngle);
+
+    //convert surface to radians
+    f_surface = (float) surfaceAngle;
+    //printf ("\nf_surface = %f \n",f_surface);
+    f_surface = degree2radian2 (f_surface); //OK
+    printf ("convert to RAD f_surface = %f \n\n",f_surface);
+    /////////////////////////////////////////////////////
+
+
+    //f_reflection2 = fmod (f_reflection1, M_2XPI);
+
+
+    //https://gamedev.net/forums/topic/385087-2d-ball-deflection-mini-golf-game/385087/
+    //ball.angle = surface.angle - ( ball.angle - surface.angle )
+    //f_reflection2 = f_surface - (f_ray - f_surface);
+    //printf ("f_reflection2 = %f \n",f_reflection2);
+
+    //https://stackoverflow.com/questions/5830791/find-radians-reflection-angle
+
+
+
+
+
+
+
+
+    f_reflection1 = normalize(f_reflection2,  0, M_2XPI );
+    printf ("Normalize Reflection = %f \n",f_reflection1);
+
+    f_reflection1 = radian2degree2 (f_reflection2);
+    reflection = (int) f_reflection1;
+
+    printf ("\nReflection = %f \n",f_reflection1);
+    slomo();
+    printf ("Press a Key\n");
+    in_pause(0);
+}
+
+
+
+
+
+float _sine_hacker(float xx)
+{//Dan_Ritchie
+	const float B = 1.2734;   //  = 4/PI;
+	const float C = -.4057;   //-4/(PI*PI);
+	const float recip2 = 0.1592;    //1 / (PI * 2);
+	const float pi2 = 6.28;     //PI * 2;
+	//float yy;
+
+	//convert the input value to a range of 0 to 1
+	xx = (xx + PI) * recip2;
+	//make it loop
+	xx -= (long)(xx-(xx<0));
+	//xx -= (long)(xx-(xx<0));
+
+	//convert back from 0-1 to -pi to +pi.
+	xx = (xx * pi2) - PI;
+
+	//original function
+	//yy = B * xx + C * xx * ABS(xx);
+	//return (yy);
+
+	return B * xx + C * xx * ABS(xx);
+}
+
+
+
+
+
+
+
+
+compiled_BANK_00.bin
+compiled_CODE.bin
+compiled_UNASSIGNED.bin
+compiled_UNCONTENDED.bin
+
+__code_crt_main_head
+
+
+
+There are several sections the compiler
+puts stuff into:
+
+codeseg = code
+constseg = constant data
+bssseg = uninitialized variables
+dataseg = initialized variables
+
+You have to change the destination section
+for each of those segments on the zcc line.
+
+zsdcc can only do codeseg and constseg so
+the recommended thing to do is declare anything
+destined for bss or data sections in asm where
+they can be placed properly.
+
+example of c declarations:
+
+extern int a;   // bss
+extern int b = 10;   // data
+
+Then in a separate asm file define the variables
+placed in a specific section:
+
+SECTION bss_name
+PUBLIC _a
+_a : defs 2
+
+SECTION data_name
+PUBLIC _b
+_b : defw 10
+
+That should be "extern int b;".
+The C declarations are not creating space -
+they only tell the compiler the variables
+exist and are defined elsewhere.
+
+------------
+collision
+
+    ;manic miner
+;LD A,(DE) ; Pick up a sprite byte
+;AND (HL)  ; AND on the current background byte
+;RET NZ    ; Return if the sprite hit something already
+
+===================
+COLLISION
+BLANK portion of Sprite touching nothing
+00000000	sprite
+OR
+00000000	tile
+========
+00000000	result 1
+
+00000000	sprite
+XOR
+00000000	tile
+========
+00000000	result 2
+
+subtract result 1 and result 2
+	00000000
+-	00000000
+=============
+	00000000
+	ZERO
+
+--------------------------------
+FILLED portion of Sprite touching nothing
+00011000	sprite
+OR
+00000000	tile
+========
+00011000	result 1
+
+00011000	sprite
+XOR
+00000000	tile
+========
+00011000	result 2
+
+subtract result 1 and result 2
+	00011000	result 1
+-	00011000	result 2
+=============
+	00000000
+	ZERO
+
+--------------------------------
+FILLED portion of Sprite touching part Tile
+00011000	sprite
+OR
+00011000	tile
+========
+00011000	result 1
+
+00011000	sprite
+XOR
+00011000	tile
+========
+00000000	result 2
+
+subtract result 1 and result 2
+	00011000	result 1
+-	00000000	result 2
+=============
+	00011000
+	NOT ZERO
+
+--------------------------------
+FILLED portion of Sprite touching full Tile
+00011000	sprite
+OR
+11111111	tile
+========
+11111111	result 1
+
+00011000	sprite
+XOR
+11111111	tile
+========
+11100111	result 2
+
+subtract result 1 and result 2
+	11111111	result 1
+-	11100111	result 2
+=============
+	00011000
+	NOT ZERO
+
+
+
+;DE = SCREEN BYTE
+;HL = SPRITE BYTE
+
+ld a, (de); load byte from screen
+;call _collision
+XOR (hl)        ; merge with Sprite
+ld (de),a		;and put it on the screen
+
+
+
+
+_rtunes_pixel:
+
+    ld de, (_gfx_xy)  ;20 T
+
+    ld a, d  ;4 T
+    and a  ;4 T
+    rra  ;4 T
+    scf  ;4 T
+    rra  ;4 T
+    and a  ;4 T
+    rra  ;4 T
+    xor d  ;4 T
+    and 11111000b  ;7 T
+
+    xor d  ;4 T
+    ld h, a  ;4 T
+    ld a, e  ;4 T
+    rlca  ;4 T
+    rlca  ;4 T
+    rlca  ;4 T
+    xor d  ;4 T
+    and 11000111b  ;7 T
+    xor d  ;4 T
+    rlca  ;4 T
+    rlca  ;4 T
+    ld l, a  ;4 T
+
+    ld a, e  ;4 T
+    and $07
+
+    ;LD D, A				;4 T
+
+    ld de, X_PositionBits  ;10T
+    add a, e  ;4 T
+    ld e, a  ;4 T
+    ld a, (de)  ;7 T
+
+    ;output to screen
+    or (hl)  ;7 T
+    ld (hl), a  ;7 T
+ret						;10 T
