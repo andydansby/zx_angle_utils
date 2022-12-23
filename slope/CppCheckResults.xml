@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<results version="2">
+    <cppcheck version="2.7" />
+    <errors>
+        <error id="invalidscanf" severity="warning" msg="scanf() without field width limits can crash with huge input data." verbose='scanf() without field width limits can crash with huge input data. Add a field width specifier to fix this problem.\012\012Sample program that can crash:\012\012#include &lt;stdio.h&gt;\012int main()\012{\012    char c[5];\012    scanf(&quot;%s&quot;, c);\012    return 0;\012}\012\012Typing in 5 or more characters may make the program crash. The correct usage here is &apos;scanf(&quot;%4s&quot;, c);&apos;, as the maximum field width does not include the terminating null byte.\012Source: http://linux.die.net/man/3/scanf\012Source: http://www.opensource.apple.com/source/xnu/xnu-1456.1.26/libkern/stdio/scanf.c' cwe="119" file0="../UNCONTENDED/radian2degrees.c">
+            <location file="..\UNCONTENDED\radian2degrees.c" line="10" column="5" />
+        </error>
+        <error id="redundantAssignment" severity="style" msg="Variable &apos;reflection2&apos; is reassigned a value before the old one has been used." verbose="Variable &apos;reflection2&apos; is reassigned a value before the old one has been used." cwe="563" file0="../UNCONTENDED/reflection.c">
+            <location file="..\UNCONTENDED\reflection.c" line="72" column="21" info="reflection2 is overwritten" />
+            <location file="..\UNCONTENDED\reflection.c" line="68" column="21" info="reflection2 is assigned" />
+            <symbol>reflection2</symbol>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &apos;glancing&apos; is assigned a value that is never used." verbose="Variable &apos;glancing&apos; is assigned a value that is never used." cwe="563" file0="../UNCONTENDED/reflection.c">
+            <location file="..\UNCONTENDED\reflection.c" line="24" column="18" />
+            <symbol>glancing</symbol>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &apos;difference&apos; is assigned a value that is never used." verbose="Variable &apos;difference&apos; is assigned a value that is never used." cwe="563" file0="../UNCONTENDED/reflection.c">
+            <location file="..\UNCONTENDED\reflection.c" line="26" column="20" />
+            <symbol>difference</symbol>
+        </error>
+        <error id="invalidscanf" severity="warning" msg="scanf() without field width limits can crash with huge input data." verbose='scanf() without field width limits can crash with huge input data. Add a field width specifier to fix this problem.\012\012Sample program that can crash:\012\012#include &lt;stdio.h&gt;\012int main()\012{\012    char c[5];\012    scanf(&quot;%s&quot;, c);\012    return 0;\012}\012\012Typing in 5 or more characters may make the program crash. The correct usage here is &apos;scanf(&quot;%4s&quot;, c);&apos;, as the maximum field width does not include the terminating null byte.\012Source: http://linux.die.net/man/3/scanf\012Source: http://www.opensource.apple.com/source/xnu/xnu-1456.1.26/libkern/stdio/scanf.c' cwe="119" file0="../UNCONTENDED/uncontended.c">
+            <location file="..\UNCONTENDED\wrap_around_PI.c" line="15" column="5" />
+        </error>
+        <error id="invalidscanf" severity="warning" msg="scanf() without field width limits can crash with huge input data." verbose='scanf() without field width limits can crash with huge input data. Add a field width specifier to fix this problem.\012\012Sample program that can crash:\012\012#include &lt;stdio.h&gt;\012int main()\012{\012    char c[5];\012    scanf(&quot;%s&quot;, c);\012    return 0;\012}\012\012Typing in 5 or more characters may make the program crash. The correct usage here is &apos;scanf(&quot;%4s&quot;, c);&apos;, as the maximum field width does not include the terminating null byte.\012Source: http://linux.die.net/man/3/scanf\012Source: http://www.opensource.apple.com/source/xnu/xnu-1456.1.26/libkern/stdio/scanf.c' cwe="119" file0="../UNCONTENDED/uncontended.c">
+            <location file="..\UNCONTENDED\wrap_around_PI.c" line="37" column="5" />
+        </error>
+        <error id="shadowVariable" severity="style" msg="Local variable &apos;incomingRay&apos; shadows outer variable" verbose="Local variable &apos;incomingRay&apos; shadows outer variable" cwe="398" file0="../UNCONTENDED/uncontended.c">
+            <location file="..\UNCONTENDED\reflection.c" line="20" column="9" info="Shadow variable" />
+            <location file="..\UNCONTENDED\variables.h" line="30" column="5" info="Shadowed declaration" />
+            <symbol>incomingRay</symbol>
+        </error>
+        <error id="shadowVariable" severity="style" msg="Local variable &apos;surfaceAngle&apos; shadows outer variable" verbose="Local variable &apos;surfaceAngle&apos; shadows outer variable" cwe="398" file0="../UNCONTENDED/uncontended.c">
+            <location file="..\UNCONTENDED\reflection.c" line="21" column="9" info="Shadow variable" />
+            <location file="..\UNCONTENDED\variables.h" line="31" column="5" info="Shadowed declaration" />
+            <symbol>surfaceAngle</symbol>
+        </error>
+        <error id="shadowFunction" severity="style" msg="Local variable &apos;reflection2&apos; shadows outer function" verbose="Local variable &apos;reflection2&apos; shadows outer function" cwe="398" file0="../UNCONTENDED/uncontended.c">
+            <location file="..\UNCONTENDED\reflection.c" line="23" column="9" info="Shadow variable" />
+            <location file="..\UNCONTENDED\externs.h" line="60" column="13" info="Shadowed declaration" />
+            <symbol>reflection2</symbol>
+        </error>
+        <error id="shadowVariable" severity="style" msg="Local variable &apos;temp&apos; shadows outer variable" verbose="Local variable &apos;temp&apos; shadows outer variable" cwe="398" file0="../UNCONTENDED/uncontended.c">
+            <location file="..\UNCONTENDED\reflection.c" line="28" column="9" info="Shadow variable" />
+            <location file="..\UNCONTENDED\variables.h" line="15" column="15" info="Shadowed declaration" />
+            <symbol>temp</symbol>
+        </error>
+        <error id="redundantAssignment" severity="style" msg="Variable &apos;reflection2&apos; is reassigned a value before the old one has been used." verbose="Variable &apos;reflection2&apos; is reassigned a value before the old one has been used." cwe="563" file0="../obsolete_code.c">
+            <location file="..\obsolete_code.c" line="311" column="21" info="reflection2 is overwritten" />
+            <location file="..\obsolete_code.c" line="307" column="21" info="reflection2 is assigned" />
+            <symbol>reflection2</symbol>
+        </error>
+        <error id="redundantAssignment" severity="style" msg="Variable &apos;reflection2&apos; is reassigned a value before the old one has been used." verbose="Variable &apos;reflection2&apos; is reassigned a value before the old one has been used." cwe="563" file0="../obsolete_code.c">
+            <location file="..\obsolete_code.c" line="396" column="21" info="reflection2 is overwritten" />
+            <location file="..\obsolete_code.c" line="392" column="21" info="reflection2 is assigned" />
+            <symbol>reflection2</symbol>
+        </error>
+        <error id="shadowFunction" severity="style" msg="Local variable &apos;reflection1&apos; shadows outer function" verbose="Local variable &apos;reflection1&apos; shadows outer function" cwe="398" file0="../obsolete_code.c">
+            <location file="..\obsolete_code.c" line="193" column="9" info="Shadow variable" />
+            <location file="..\obsolete_code.c" line="3" column="6" info="Shadowed declaration" />
+            <symbol>reflection1</symbol>
+        </error>
+        <error id="shadowFunction" severity="style" msg="Local variable &apos;reflection2&apos; shadows outer function" verbose="Local variable &apos;reflection2&apos; shadows outer function" cwe="398" file0="../obsolete_code.c">
+            <location file="..\obsolete_code.c" line="194" column="9" info="Shadow variable" />
+            <location file="..\obsolete_code.c" line="90" column="6" info="Shadowed declaration" />
+            <symbol>reflection2</symbol>
+        </error>
+        <error id="shadowFunction" severity="style" msg="Local variable &apos;reflection1&apos; shadows outer function" verbose="Local variable &apos;reflection1&apos; shadows outer function" cwe="398" file0="../obsolete_code.c">
+            <location file="..\obsolete_code.c" line="269" column="9" info="Shadow variable" />
+            <location file="..\obsolete_code.c" line="3" column="6" info="Shadowed declaration" />
+            <symbol>reflection1</symbol>
+        </error>
+        <error id="shadowFunction" severity="style" msg="Local variable &apos;reflection2&apos; shadows outer function" verbose="Local variable &apos;reflection2&apos; shadows outer function" cwe="398" file0="../obsolete_code.c">
+            <location file="..\obsolete_code.c" line="270" column="9" info="Shadow variable" />
+            <location file="..\obsolete_code.c" line="90" column="6" info="Shadowed declaration" />
+            <symbol>reflection2</symbol>
+        </error>
+        <error id="shadowFunction" severity="style" msg="Local variable &apos;reflection1&apos; shadows outer function" verbose="Local variable &apos;reflection1&apos; shadows outer function" cwe="398" file0="../obsolete_code.c">
+            <location file="..\obsolete_code.c" line="346" column="9" info="Shadow variable" />
+            <location file="..\obsolete_code.c" line="3" column="6" info="Shadowed declaration" />
+            <symbol>reflection1</symbol>
+        </error>
+        <error id="shadowFunction" severity="style" msg="Local variable &apos;reflection2&apos; shadows outer function" verbose="Local variable &apos;reflection2&apos; shadows outer function" cwe="398" file0="../obsolete_code.c">
+            <location file="..\obsolete_code.c" line="347" column="9" info="Shadow variable" />
+            <location file="..\obsolete_code.c" line="90" column="6" info="Shadowed declaration" />
+            <symbol>reflection2</symbol>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &apos;f_reflection&apos; is assigned a value that is never used." verbose="Variable &apos;f_reflection&apos; is assigned a value that is never used." cwe="563" file0="../obsolete_code.c">
+            <location file="..\obsolete_code.c" line="35" column="24" />
+            <symbol>f_reflection</symbol>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &apos;reflection&apos; is assigned a value that is never used." verbose="Variable &apos;reflection&apos; is assigned a value that is never used." cwe="563" file0="../obsolete_code.c">
+            <location file="..\obsolete_code.c" line="81" column="16" />
+            <symbol>reflection</symbol>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &apos;f_reflection1&apos; is assigned a value that is never used." verbose="Variable &apos;f_reflection1&apos; is assigned a value that is never used." cwe="563" file0="../obsolete_code.c">
+            <location file="..\obsolete_code.c" line="114" column="19" />
+            <symbol>f_reflection1</symbol>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &apos;f_reflection&apos; is assigned a value that is never used." verbose="Variable &apos;f_reflection&apos; is assigned a value that is never used." cwe="563" file0="../obsolete_code.c">
+            <location file="..\obsolete_code.c" line="141" column="24" />
+            <symbol>f_reflection</symbol>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &apos;reflection2&apos; is assigned a value that is never used." verbose="Variable &apos;reflection2&apos; is assigned a value that is never used." cwe="563" file0="../obsolete_code.c">
+            <location file="..\obsolete_code.c" line="194" column="21" />
+            <symbol>reflection2</symbol>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &apos;f_reflection1&apos; is assigned a value that is never used." verbose="Variable &apos;f_reflection1&apos; is assigned a value that is never used." cwe="563" file0="../obsolete_code.c">
+            <location file="..\obsolete_code.c" line="320" column="19" />
+            <symbol>f_reflection1</symbol>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &apos;glancing&apos; is assigned a value that is never used." verbose="Variable &apos;glancing&apos; is assigned a value that is never used." cwe="563" file0="../obsolete_code.c">
+            <location file="..\obsolete_code.c" line="348" column="18" />
+            <symbol>glancing</symbol>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &apos;difference&apos; is assigned a value that is never used." verbose="Variable &apos;difference&apos; is assigned a value that is never used." cwe="563" file0="../obsolete_code.c">
+            <location file="..\obsolete_code.c" line="350" column="20" />
+            <symbol>difference</symbol>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &apos;_mikeCOS&apos; is never used." verbose="The function &apos;_mikeCOS&apos; is never used." cwe="561">
+            <location file="..\UNCONTENDED\functions.c" line="38" column="0" />
+            <symbol>_mikeCOS</symbol>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &apos;naked_contendedRam&apos; is never used." verbose="The function &apos;naked_contendedRam&apos; is never used." cwe="561">
+            <location file="..\CONTENDED\contended.c" line="16" column="0" />
+            <symbol>naked_contendedRam</symbol>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &apos;naked_placement_in_RAM0&apos; is never used." verbose="The function &apos;naked_placement_in_RAM0&apos; is never used." cwe="561">
+            <location file="..\RAM0\ram0.c" line="39" column="0" />
+            <symbol>naked_placement_in_RAM0</symbol>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &apos;reflection3&apos; is never used." verbose="The function &apos;reflection3&apos; is never used." cwe="561">
+            <location file="..\obsolete_code.c" line="29" column="0" />
+            <symbol>reflection3</symbol>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &apos;reflection4&apos; is never used." verbose="The function &apos;reflection4&apos; is never used." cwe="561">
+            <location file="..\obsolete_code.c" line="262" column="0" />
+            <symbol>reflection4</symbol>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &apos;reflection6&apos; is never used." verbose="The function &apos;reflection6&apos; is never used." cwe="561">
+            <location file="..\obsolete_code.c" line="189" column="0" />
+            <symbol>reflection6</symbol>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Cppcheck cannot find all the include files (use --check-config for details)" verbose="Cppcheck cannot find all the include files. Cppcheck can check the code without the include files found. But the results will probably be more accurate if all the include files are found. Please check your project&apos;s include directories and add all of them as include directories for Cppcheck. To see what files Cppcheck cannot find use --check-config." />
+    </errors>
+</results>
