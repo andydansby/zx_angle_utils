@@ -57,6 +57,8 @@ extern void wrapAroundPI (void);
 extern void wrapAroundPI2 (void);
 extern void reflection5 (void);
 extern void aroundCompass (void);
+extern void scaleNumbers (void);
+extern void normalize (void);
 //
 
 

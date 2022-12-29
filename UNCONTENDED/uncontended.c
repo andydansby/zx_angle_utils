@@ -49,12 +49,14 @@ void main ()
         printf ("4 Reflection\n");
         printf ("5 Wrap Around PI\n");
         printf ("6 Wrap Around Double PI\n");
+        printf ("7 Scale Numbers \n");
+        printf ("8 Normalize Numbers \n");
         printf ("9 Around the Compass *LONG*\n");
 
         printf ("enter choice ");
 
-        scanf("%d", &routineChoice);
-        //routineChoice = 1;
+        scanf("%d", &routineChoice);//  temp  uncomment for normal operation
+        //routineChoice = 8;//temp comment for normal operation
 
         zx_cls(PAPER_WHITE);
 
@@ -97,12 +99,12 @@ void main ()
             }
             case 7:
             {
-                wrapAroundPI();
+                scaleNumbers();
                 break;
             }
             case 8:
             {
-                wrapAroundPI();
+                normalize();
                 break;
             }
             case 9:
