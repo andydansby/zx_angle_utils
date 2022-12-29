@@ -9,13 +9,11 @@ cd ..
 @rem zcc +zx -vn -SO3 -c -clib=new -pragma-include:zpragma.inc -o RAM0.o --fsigned-char @ram0.lst
 
 rem compiling string for SDCC object file
-zcc +zx -vn -clib=sdcc_iy @ram0.lst -c -o RAM0.o -m
+zcc +zx -vn -clib=sdcc_iy -c -o RAM0.o -m -pragma-include:zpragma.inc @ram0.lst
 
-
-
-rem @if not exist "RAM0.o" (
-rem call error.bat
-rem )
+@if not exist "RAM0.o" (
+ call error.bat
+)
 
 copy "ram0.o" "..\"
 move "ram0.o" "codemaps\"
