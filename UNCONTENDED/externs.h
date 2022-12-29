@@ -53,7 +53,11 @@ extern void border_Change_RAM0(unsigned char color) __z88dk_fastcall;
 //found in RAM0
 extern void reflection5 (void);
 extern void slopeCalculation (void);
-
+extern void wrapAroundPI (void);
+extern void wrapAroundPI2 (void);
+extern void reflection5 (void);
+extern void aroundCompass (void);
+//
 
 
 //found in random.asm

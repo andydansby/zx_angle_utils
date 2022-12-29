@@ -4,7 +4,8 @@ void radians2Degrees (void)
 
     slomo();
     printf("\x16\x01\x02");
-	printf ("Hello Radian to Degrees\n");
+	printf ("Hello Radian to Degrees \n\n");
+	printf ("Converts Radians to Degrees \n\n");
 
     printf ("Enter Radian \n");
     scanf("%s", &string);

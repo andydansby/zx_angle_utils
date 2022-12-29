@@ -27,13 +27,8 @@
 
 #include "functions.c"
 
-
-
 #include "degrees2radian.c"
 #include "radian2degrees.c"
-#include "aroundCompass.c"
-#include "wrap_around_PI.c"
-#include "reflection.c"
 
 void main ()
 {
@@ -54,7 +49,7 @@ void main ()
         printf ("4 Reflection\n");
         printf ("5 Wrap Around PI\n");
         printf ("6 Wrap Around Double PI\n");
-        printf ("7 Around the Compass *LONG*\n");
+        printf ("9 Around the Compass *LONG*\n");
 
         printf ("enter choice ");
 
@@ -65,11 +60,11 @@ void main ()
 
         switch (routineChoice)
         {
-            case 0:
+            /*case 0:
             {
                 //do nothing
                 break;
-            }
+            }*/
             case 1:
             {
                 slopeCalculation();
@@ -101,6 +96,16 @@ void main ()
                 break;
             }
             case 7:
+            {
+                wrapAroundPI();
+                break;
+            }
+            case 8:
+            {
+                wrapAroundPI();
+                break;
+            }
+            case 9:
             {
                 aroundCompass();
                 break;
