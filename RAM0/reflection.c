@@ -37,8 +37,23 @@ void reflection5 (void)
 
     slomo();
 
-    printf("\x16\x01\x02");
-	printf ("Hello Reflection\n");
+    printf("\x16\x01\x01");//printf("\x16\x01\x02");
+	//printf ("Hello Reflection\n\n");
+
+
+	printf ("The angle of Reflection is always equal to\n");
+	printf ("the incidence angle in the opposite direction\n");
+    printf ("of the surface. You will need\n");
+    printf ("The angle of the surface and\n");
+    printf ("The angle of the ray.\n");
+
+    printf ("there will be 2 outputs\n");
+    printf ("invert reflection is below the surface\n");
+    printf ("reflection is above surface\n");
+    printf ("The normal answer is Reflection\n\n");
+
+
+
 	printf ("Enter Surface Angle ");
     scanf("%d", &surfaceAngle);
 
@@ -64,7 +79,7 @@ void reflection5 (void)
     printf ("\n\n");
     printf ("Surface Angle = %d oppositeAngle = %d\n",surfaceAngle, oppositeAngle);
     printf ("Inbound Ray   = %d",incomingRay);
-    printf ("\n\n\n");
+    printf ("\n\n");
 
 
     ////////////
@@ -128,11 +143,14 @@ void reflection5 (void)
         reflection1 = oppositeAngle;
         reflection2 = oppositeAngle;
     }
-    //need to program edge cases as well
-    printf ("## reflection1 = %d",reflection1);
+    //special case coming at the edge
+    //leave for last check
+
+    printf ("## reflection = %d  ##",reflection2);
     printf ("\n");
-    printf ("## reflection2 = %d",reflection2);
-    printf ("\n\n\n");
+
+    printf ("invert reflection = %d",reflection1);
+    printf ("\n\n");
     slomo();
     printf ("Press a Key\n");
     in_pause(0);

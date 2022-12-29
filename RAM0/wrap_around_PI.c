@@ -16,9 +16,9 @@ void wrapAroundPI (void)
     slomo();
 
     printf("\x16\x01\x02");
-	printf ("Hello Wrap Around Double PI\n");
-	printf ("If you exceed over 6.28\n");
-	printf ("Wraps around to 0 + remainder\n");
+	printf ("Hello Wrap Around Double PI\n\n");
+	printf ("If you exceed over Double PI (6.28)\n");
+	printf ("Wraps around to 0 + remainder\n\n");
 
     printf ("Enter Radian ");
     scanf("%s", &string);
@@ -50,9 +50,9 @@ void wrapAroundPI2 (void)
     slomo();
 
     printf("\x16\x01\x02");
-	printf ("Hello Wrap Around PI\n");
-	printf ("If you exceed over 3.14\n");
-	printf ("Wraps around to 0 + remainder\n");
+	printf ("Hello Wrap Around PI\n\n");
+	printf ("If the number exceeds PI (3.14)\n");
+	printf ("Wraps around to 0 + remainder\n\n");
 
     printf ("Enter Radian ");
     scanf("%s", &string);

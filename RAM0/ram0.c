@@ -45,13 +45,13 @@ __endasm;
 
 
 #include "externs.h"
-#include "normalize.c"
+#include "normalize.c"  //a & b
 #include "fastTrig.c"
-#include "slope.c"
-#include "ram0.h"
-#include "wrap_around_PI.c"
-#include "reflection.c"
-#include "aroundCompass.c"
+#include "slope.c"      //c
+//#include "ram0.h"
+#include "wrap_around_PI.c" //e
+#include "reflection.c"     //g
+#include "aroundCompass.c"  //h
 
 extern void slomo (void);
 //extern void in_pause (a);
